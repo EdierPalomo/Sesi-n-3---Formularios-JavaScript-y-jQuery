@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi primera página completa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img id="logo" src="https://static.vecteezy.com/system/resources/thumbnails/023/817/918/small_2x/solid-icon-for-demo-vector.jpg" width="50" height="50" alt="Logo de la empresa">
+    <h1>Mi Sitio</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Blog</h2>
+      <p class="destacado">Este párrafo usa la clase .destacado y el pseudoelemento ::before.</p>
+      <article>
+        <h3>Primer post</h3>
+        <p>Un párrafo con <strong>texto importante</strong>. Observa la primera letra agrandada con ::first-letter.</p>
+        <p>Contenido del post...</p>
+      </article>
+
+      <h2>Demostración de pseudoclases</h2>
+      <label for="demo">Escribe algo para ver :focus en acción:</label>
+      <input type="text" id="demo" placeholder="Haz clic aquí">
+
+      <h2>Lista de 5 elementos</h2>
+      <ul>
+        <li>Primer elemento (:first-child)</li>
+        <li>Segundo elemento</li>
+        <li>Tercer elemento (:nth-child(odd))</li>
+        <li>Cuarto elemento</li>
+        <li>Quinto elemento (:nth-child(odd))</li>
+      </ul>
+    </section>
+
+    <aside>
+      <p>Contenido relacionado</p>
+      <ul>
+        <li>Enlace recomendado</li>
+        <li>Otro recurso</li>
+      </ul>
+    </aside>
+  </main>
+
+  <section id="sesion3">
+    <h2>Sesión 3: Formularios + JavaScript y jQuery</h2>
+
+    <h3>Formulario de contacto</h3>
+    <form action="/enviar" method="POST">
+      <fieldset>
+        <legend>Datos de contacto</legend>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <label for="pais">País:</label>
+        <select id="pais" name="pais">
+          <option value="mx">México</option>
+          <option value="us">Estados Unidos</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+      </fieldset>
+    </form>
+
+    <h3>Interacción con JavaScript</h3>
+    <button id="miBoton">Cambiar estilo</button>
+    <div id="caja">Caja</div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Mi Sitio</p>
+  </footer>
+
+  <script>
+    console.log("Hola desde JavaScript");
+  </script>
+  <script src="app.js" defer></script>
+  <script src="variables.js" defer></script>
+  <script src="condicionales.js" defer></script>
+  <script src="cookies.js" defer></script>
+  <script>
+    const boton = document.querySelector("#miBoton");
+    boton.addEventListener("click", () => {
+      document.querySelector("#caja").classList.toggle("activo");
+    });
+
+    // Equivalente con jQuery (requiere cargar la librería)
+    // $("#miBoton").on("click", function () {
+    //   $("#caja").toggleClass("activo");
+    // });
+  </script>
+</body>
+</html>
